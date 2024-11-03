@@ -29,8 +29,14 @@ function question() {
 }
 question()
 
-
-function toTitleCase( str ) 
-{
-   return str.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
+function toTitleCase(str) {
+  return str.split(/\s+/).map(part => 
+      part.split('-').map(word => 
+          word.charAt(0).toUpperCase() + word.substring(1).toLowerCase()
+      ).join('-')
+  ).join(' ');
 }
+//function toTitleCase( str ) 
+//{
+ //  return str.split(/\s+/).map( s => s.charAt( 0 ).toUpperCase() + s.substring(1).toLowerCase() ).join( " " );
+//}
